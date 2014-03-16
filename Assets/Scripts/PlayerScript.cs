@@ -23,6 +23,17 @@ public class PlayerScript : MonoBehaviour {
 		// 4 - Movement per direction
 		movement = new Vector2(speed.x * inputX, 
 		                       speed.y * inputY);
+
+		bool shoot = Input.GetButtonDown ("Fire1");
+		shoot |= Input.GetButtonDown ("Fire2");
+		
+		if (shoot)
+		{
+			WeaponScript weapon = GetComponent<WeaponScript>();
+			if (weapon) {
+				weapon.Attack(false);
+			}
+		}
 	}
 
 	void FixedUpdate(){

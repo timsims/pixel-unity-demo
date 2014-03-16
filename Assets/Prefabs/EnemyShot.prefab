@@ -9,13 +9,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
+  - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
-  - 50: {fileID: 5000000}
-  - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: player
+  m_Name: EnemyShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.94179678, y: -1.69992816, z: 0}
-  m_LocalScale: {x: .200000003, y: .200000003, z: 1}
+  m_LocalPosition: {x: -2.49759722, y: -4.20943499, z: 0}
+  m_LocalScale: {x: .349999994, y: .349999994, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!50 &5000000
@@ -55,9 +54,9 @@ BoxCollider2D:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 11.6027832, y: 10.1068516}
-  m_Center: {x: -.0534263253, y: .0534260273}
+  m_IsTrigger: 1
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66,10 +65,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1550cca60bc547eea5a1fb732808253, type: 3}
+  m_Script: {fileID: 11500000, guid: b0fb03a7ecbb94c91bd9ec9877932090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 20, y: 20}
+  damage: 1
+  isEnemyShot: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,24 +78,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d9eb75651b4e4a7387e09c7607cb5e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 969ed232c83d344768663b09953d66ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
-  isEmeny: 0
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0c4d3c149c8f4c24a58459e2ddf80e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shotPrefab: {fileID: 400000, guid: 70e43834098a34203b20a4cee6495a8a, type: 2}
-  shootingRange: .25
+  speed: {x: 10, y: 10}
+  direction: {x: 1, y: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -117,7 +104,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: c7c671c3112ed499aac7e82342948a31, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2d6c5dde29794985a87d0392604d31d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

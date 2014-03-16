@@ -13,8 +13,10 @@ public class MoveScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
 		movement = new Vector2 (speed.x * direction.x,
-		                       speed.y * direction.y);
+
+		                        speed.y * direction.y);
 	}
 
 	void FixedUpdate(){
